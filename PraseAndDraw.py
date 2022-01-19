@@ -37,6 +37,7 @@ class Work:
                         time_interval = time_2 - time_1
                         self.response_time_bone.append(int(time_interval.total_seconds()))
                 return "OK"
+              
             elif model == 'Chest':
                 for i, n in enumerate(data['RT_Chest']):
                     # print('C', i)
@@ -48,6 +49,7 @@ class Work:
                         time_interval = time_2 - time_1
                         self.response_time_chest.append(int(time_interval.total_seconds()))
                 return "OK"
+              
             elif model == 'Ekg':
                 for i, n in enumerate(data['RT_ekg']):
                     # print('C', i)
@@ -59,6 +61,7 @@ class Work:
                         time_interval = time_2 - time_1
                         self.response_time_ekg.append(int(time_interval.total_seconds()))
                 return "OK"
+              
         elif mode = 'in_util_out':
             if model == 'Boneage':
                 for i, n in enumerate(data['RT_Boneage']):
@@ -70,6 +73,7 @@ class Work:
                         time_interval = time_2 - time_1
                         self.response_time_bone2.append(int(time_interval.total_seconds()))
                 return "OK"
+              
             elif model == 'Chest':
                 for i, n in enumerate(data['RT_Chest']):
                     # print('C', i)
@@ -81,6 +85,7 @@ class Work:
                         time_interval = time_2 - time_1
                         self.response_time_chest2.append(int(time_interval.total_seconds()))
                 return "OK"
+              
             elif model == 'Ekg':
                 for i, n in enumerate(data['RT_Ekg']):
                     # print('C', i)
@@ -159,6 +164,7 @@ class Work:
                 plt.tight_layout()
                 plt.savefig('Response_Time_Bone_util_output.png', dpi=200)
                 plt.show()
+                
             elif model == 'Chest':
                 tick_spacing = data['RT_Chest']
                 tick_spacing = 72
@@ -175,6 +181,7 @@ class Work:
                 plt.tight_layout()
                 plt.savefig('Response_Time_Chest_util_output.png', dpi=200)
                 plt.show()
+                
             elif model == 'Ekg':
                 tick_spacing = data['RT_Ekg']
                 tick_spacing = 72
