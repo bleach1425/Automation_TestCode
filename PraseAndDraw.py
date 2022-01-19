@@ -52,7 +52,6 @@ class Work:
               
             elif model == 'Ekg':
                 for i, n in enumerate(data['RT_ekg']):
-                    # print('C', i)
                     if (i+1) == len(data['RT_ekg']):
                         break
                     else:
@@ -76,7 +75,6 @@ class Work:
               
             elif model == 'Chest':
                 for i, n in enumerate(data['RT_Chest']):
-                    # print('C', i)
                     if (i+1) == len(data['RT_Chest']):
                         break
                     else:
@@ -88,7 +86,6 @@ class Work:
               
             elif model == 'Ekg':
                 for i, n in enumerate(data['RT_Ekg']):
-                    # print('C', i)
                     if (i+1) == len(data['RT_Ekg']):
                         break
                     else:
@@ -113,7 +110,6 @@ class Work:
                 plt.ylabel("time (s)")
                 plt.xticks(fontsize=8, rotation=45)
                 plt.xlabel("date")
-                # plt.plot(data['RT_Boneage'][1:], response_list)
                 plt.tight_layout()
                 plt.savefig('Response_Time_Bone.png', dpi=200)
                 plt.show()
@@ -176,8 +172,6 @@ class Work:
                 plt.ylabel("time (s)")
                 plt.xticks(fontsize=6, rotation=45)
                 plt.xlabel("date")
-                # plt.axhline(y=averge_line, color='red')
-                # plt.plot(data['RT_Chest'][1:], response_list)
                 plt.tight_layout()
                 plt.savefig('Response_Time_Chest_util_output.png', dpi=200)
                 plt.show()
@@ -193,8 +187,6 @@ class Work:
                 plt.ylabel("time (s)")
                 plt.xticks(fontsize=6, rotation=45)
                 plt.xlabel("date")
-                # plt.axhline(y=averge_line, color='red')
-                # plt.plot(data['RT_Chest'][1:], response_list)
                 plt.tight_layout()
                 plt.savefig('Response_Time_ecg_util_output.png', dpi=200)
                 plt.show()
