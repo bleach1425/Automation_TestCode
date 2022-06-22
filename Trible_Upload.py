@@ -161,28 +161,28 @@ class Work(Dicom_fix):
                 time.sleep(self.chest_wait)
         elif model == 'ekg':            
             while True:
-            if self.ekg_num == self.ekg_target_num:
-                break
-            target = random.choice(self.Ekg_path)
-            # filename, id, new_file_name 
-            ekg_fix("./data/Ekg/" + target, self.pid_title + f'_{self.ekg_id}', f'RAM_Ekg_{self.ekg_id}.xml')
-            try:
-                print("From path: ", os.getcwd())
-                print("move: ", f"RAM_Ekg_{self.ekg_id}.xml")
-                shutil.move(f'RAM_Ekg_{self.ekg_id}.xml' + target, '/secure/imgs/ekg')
-            except:
-                print("Error")
-                while not os.path.isfile(f"RAM_Ekg_{self.ekg_id}.xml"):
-                    time.sleep(2)
-                shutil.move(f'RAM_Ekg_{self.ekg_id}.xml', '/secure/imgs/ekg')
-            # ------------------------------------------------- #
-            self.result['CT_Ekg'].append(str(datetime.now().strftime("%Y/%m/%d %H:%M:%S")))
-            self.ekg_num += 1
-            self.ekg_id += 1
-            # ------------------------------------------------- #
-            print(f"上傳了{str(self.ekg_num)}個Ekg檔案")
-            gc.collect()
-            time.sleep(self.ekg_wait)
+                if self.ekg_num == self.ekg_target_num:
+                    break
+                target = random.choice(self.Ekg_path)
+                # filename, id, new_file_name 
+                ekg_fix("./data/Ekg/" + target, self.pid_title + f'_{self.ekg_id}', f'RAM_Ekg_{self.ekg_id}.xml')
+                try:
+                    print("From path: ", os.getcwd())
+                    print("move: ", f"RAM_Ekg_{self.ekg_id}.xml")
+                    shutil.move(f'RAM_Ekg_{self.ekg_id}.xml' + target, '/secure/imgs/ekg')
+                except:
+                    print("Error")
+                    while not os.path.isfile(f"RAM_Ekg_{self.ekg_id}.xml"):
+                        time.sleep(2)
+                    shutil.move(f'RAM_Ekg_{self.ekg_id}.xml', '/secure/imgs/ekg')
+                # ------------------------------------------------- #
+                self.result['CT_Ekg'].append(str(datetime.now().strftime("%Y/%m/%d %H:%M:%S")))
+                self.ekg_num += 1
+                self.ekg_id += 1
+                # ------------------------------------------------- #
+                print(f"上傳了{str(self.ekg_num)}個Ekg檔案")
+                gc.collect()
+                time.sleep(self.ekg_wait)
             
 
     @main_work_print("John")
